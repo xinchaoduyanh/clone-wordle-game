@@ -4,20 +4,42 @@ import Key from '../Key/Key'
 import { useDispatch, useSelector } from 'react-redux';
 import { rootState } from '../interface/interface';
 import { descreasePos, increaseRow, setBoard } from '../../Redux/boardSlice';
+import wordlists from '../../words.json'
+import { log } from 'console';
 export default function KeyBoard() {
   const rows:string[] = ["q w e r t y u i o p","a s d f g h j k l","z x c v b n m"];
   const pos = useSelector((state:rootState)=> state.board.pos)
   const board = useSelector((state:rootState)=> state.board.board)
+  const row = useSelector((state:rootState)=> state.board.row)
+  const correctWord = useSelector((state:rootState) => state.board.correctWord)
   const dispatch = useDispatch()
+  let allWords:string[] = wordlists.words
+  let board5Words: string = ''
+  for(let i = 5;i>0;i--){
+    board5Words += `${board[pos-i]}`
+  }
+  board5Words.toLowerCase()
   const clickBack = () => {
-    // if(pos<0) return;
+    if(Math.floor((pos-1)/5)< row) return;
     const newBoard = [...board]
     newBoard[pos-1] ="";
     dispatch(setBoard(newBoard))
     dispatch(descreasePos())
   }
   const clickEnter = () => {
-    if((pos)%5===0 && pos!== 0)dispatch(increaseRow())
+    if(allWords.includes(board5Words.toLowerCase()) === false){
+        // console.log('invalid word');
+        alert('Invalid word') 
+    }
+    else if(allWords.includes(board5Words.toLowerCase())){
+      console.log('valid word');
+      if((pos)%5===0 && pos!== 0 && row*5 < pos )dispatch(increaseRow())  
+    }   
+    if(pos === 30 && allWords.includes(board5Words.toLowerCase())) {
+      alert('The word is :' + correctWord)
+    }
+    console.log(correctWord);
+    
     
   }
   return (

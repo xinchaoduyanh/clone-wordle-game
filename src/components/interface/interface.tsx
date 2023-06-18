@@ -3,6 +3,7 @@ interface boardState {
   pos:number,
   row:number,
   key:string,
+  correctWord:string
 }
 
 export interface rootState {
