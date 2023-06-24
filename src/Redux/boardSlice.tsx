@@ -34,7 +34,22 @@ export const boardSlice = createSlice({
     },
     setKey: (state,action) => {
       state.key = action.payload
-    }
+    },
+    resetGame: (state) => {
+      const randomNum = Math.floor(Math.random() * wordlist.words.length);
+      state.board = [
+        '', '', '', '', '',
+        '', '', '', '', '',
+        '', '', '', '', '',
+        '', '', '', '', '',
+        '', '', '', '', '',
+        '', '', '', '', '',
+      ];
+      state.pos = 0;
+      state.row = 0;
+      state.key = '';
+      state.correctWord = wordlist.words[randomNum].toUpperCase();
+    },
   }
 
 })
@@ -43,7 +58,8 @@ export const {
   increasePos,
   descreasePos,
   increaseRow,
-  setKey
+  setKey,
+  resetGame
 } = boardSlice.actions
 
 export default boardSlice.reducer;

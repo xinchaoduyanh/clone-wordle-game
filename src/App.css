@@ -14,6 +14,19 @@
   --color-dark-green: #151924;
   --color-white: #f9f9f9;
   --color-light-blue: #6eb9e3;
+  --color-pink-1: #ffe5ec;
+  --color-pink-2: #ffc2d1;
+  --color-pink-3: #FFB3C6;
+  --color-pink-4: #FF8FAB;
+  --color-pink-5: #FB6F92;
+  --color-pink-hot: #EF7C8E;
+  --color-cream: #FAE8E0;
+  --color-spearmint: #B6E2D3;
+  --color-rosewater: #D8A7B1;
+  --color-teal: #29A0B1;
+  --color-peach: #FBE5C8;
+
+
 
   /* Border radius */
   --border-rounded-md: 8px;
@@ -44,7 +57,10 @@
   overflow: hidden;
   flex-direction: column;
 }
-
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}
 html,
 body {
   overflow: hidden;
@@ -57,9 +73,10 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   color: var(--color-light-blue);
-  background-color: var(--color-dark-green);
+  background-color: var(--color-pink-2);
   font-size: var(--font-md);
   font-family: var(--font-poppins);
+  
 }
 
 .board-container {
@@ -69,6 +86,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 /* End  */

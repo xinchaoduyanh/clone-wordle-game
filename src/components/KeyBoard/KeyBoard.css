@@ -8,8 +8,8 @@
      align-items: center;
  }
   span {
-     background-color: grey;
-     color: white;
+     background-color: var(--color-cream);
+     color: var(teal);
      font-weight: var(--font-bold);
      font-size: var(--font-md);
      margin: 0.25em;

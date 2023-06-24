@@ -2,6 +2,7 @@
   font-size: var(--font-xlg);
   text-align: center;
   font-weight: var(--font-semibold);
+  color: var(--color-pink-hot);
   /* color: antiquewhite; */
 }
 .heading-subtitle {
@@ -9,4 +10,5 @@
   color: white;
   text-align: center;
   font-weight: var(--font-medium);
+  color: var(--color-pink-5);
 }
